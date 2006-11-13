@@ -16,6 +16,8 @@ BuildRequires:	libassuan-devel >= 1:0.9.0
 BuildRequires:	libgpg-error-devel >= 0.7
 BuildRequires:	libtool
 Requires:	gnupg-smime >= 1.9.6
+Requires:	libassuan >= 1:0.9.0
+Requires:	libgpg-error >= 0.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -62,6 +64,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README TODO
+%doc AUTHORS ChangeLog NEWS README TODO doc/website
 %attr(755,root,root) %{_libdir}/libscute.so.*.*.*
 %attr(755,root,root) %{_libdir}/libscute.so
