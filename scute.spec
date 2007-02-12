@@ -1,5 +1,5 @@
 Summary:	PKCS#11 implementation of GnuPG Agent using the GnuPG Smart Card Daemon
-Summary(pl):	Implementacja PKCS#11 Agenta GnuPG przy uøyciu GnuPG Smart Card Daemona
+Summary(pl.UTF-8):   Implementacja PKCS#11 Agenta GnuPG przy u≈ºyciu GnuPG Smart Card Daemona
 Name:		scute
 Version:	1.0.0
 Release:	1
@@ -27,12 +27,12 @@ Smart Card Daemon. Currently, only the OpenPGP card is supported.
 Scute enables you to use your OpenPGP smart card for client
 authentication with SSL in Mozilla.
 
-%description -l pl
-To jest implementacja PKCS#11 Agenta GnuPG przy uøyciu GnuPG Smart
-Card Daemona. Aktualnie obs≥ugiwane s± tylko karty OpenPGP.
+%description -l pl.UTF-8
+To jest implementacja PKCS#11 Agenta GnuPG przy u≈ºyciu GnuPG Smart
+Card Daemona. Aktualnie obs≈Çugiwane sƒÖ tylko karty OpenPGP.
 
-Scute pozwala uøywaÊ kart procesorowych OpenPGP do uwierzytelniania
-klientÛw przy uøyciu SSL w Mozilli.
+Scute pozwala u≈ºywaƒá kart procesorowych OpenPGP do uwierzytelniania
+klient√≥w przy u≈ºyciu SSL w Mozilli.
 
 %prep
 %setup -q
