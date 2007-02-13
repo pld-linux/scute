@@ -1,5 +1,5 @@
 Summary:	PKCS#11 implementation of GnuPG Agent using the GnuPG Smart Card Daemon
-Summary(pl.UTF-8):   Implementacja PKCS#11 Agenta GnuPG przy użyciu GnuPG Smart Card Daemona
+Summary(pl.UTF-8):	Implementacja PKCS#11 Agenta GnuPG przy użyciu GnuPG Smart Card Daemona
 Name:		scute
 Version:	1.0.0
 Release:	1
