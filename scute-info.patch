@@ -1,0 +1,14 @@
+--- scute-1.1.0/doc/manual/scute.texi.orig	2007-05-03 17:06:24.000000000 +0200
++++ scute-1.1.0/doc/manual/scute.texi	2007-05-16 07:57:59.514981732 +0200
+@@ -2,9 +2,9 @@
+ @setfilename scute.info
+ @settitle The Scute Manual
+ 
+-@dircategory GNU Utilities
++@dircategory Miscellaneous:
+ @direntry
+-* Scute: (scute).          PKCS #11 module for the OpenPGP Card
++* Scute: (scute).			PKCS #11 module for the OpenPGP Card
+ @end direntry
+ 
+ @include version.texi
