@@ -1,12 +1,12 @@
 Summary:	PKCS#11 implementation of GnuPG Agent using the GnuPG Smart Card Daemon
 Summary(pl.UTF-8):	Implementacja PKCS#11 Agenta GnuPG przy użyciu GnuPG Smart Card Daemona
 Name:		scute
-Version:	1.1.0
+Version:	1.2.0
 Release:	1
 License:	GPL v2+
 Group:		Applications
 Source0:	ftp://ftp.gnupg.org/gcrypt/scute/%{name}-%{version}.tar.bz2
-# Source0-md5:	229c47721600aa4292dcde50fd6e8135
+# Source0-md5:	b8cd78baba8971fe8841da06046a30a8
 Patch0:		%{name}-info.patch
 URL:		http://www.gnupg.org/
 BuildRequires:	autoconf >= 2.59
@@ -47,6 +47,7 @@ klientów przy użyciu SSL w Mozilli.
 %{__autoheader}
 %{__automake}
 %configure \
+	--with-gpg-agent=/usr/bin/gpg-agent \
 	--with-gpgsm=/usr/bin/gpgsm
 %{__make}
 
@@ -73,5 +74,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO doc/website
 %attr(755,root,root) %{_libdir}/libscute.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libscute.so.0
 %attr(755,root,root) %{_libdir}/libscute.so
 %{_infodir}/scute.info*
