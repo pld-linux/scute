@@ -1,24 +1,23 @@
 Summary:	PKCS#11 implementation of GnuPG Agent using the GnuPG Smart Card Daemon
 Summary(pl.UTF-8):	Implementacja PKCS#11 Agenta GnuPG przy użyciu GnuPG Smart Card Daemona
 Name:		scute
-Version:	1.2.0
+Version:	1.4.0
 Release:	1
 License:	GPL v2+
 Group:		Applications
 Source0:	ftp://ftp.gnupg.org/gcrypt/scute/%{name}-%{version}.tar.bz2
-# Source0-md5:	b8cd78baba8971fe8841da06046a30a8
+# Source0-md5:	1b280fa34a92708db0bbb371816c88c0
 Patch0:		%{name}-info.patch
 URL:		http://www.gnupg.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9.3
-# configure says 0.6.10, but assuan_set_assuan_err_source() needs 0.9.0 and 1.0.1 is needed to plug memory leak
-BuildRequires:	libassuan-devel >= 1:1.0.1
+BuildRequires:	libassuan-devel >= 1:2.0.0
 BuildRequires:	libgpg-error-devel >= 1.4
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	texinfo
 Requires(post,postun):	/sbin/ldconfig
 Requires:	gnupg-smime >= 1.9.6
-Requires:	libassuan >= 1:1.0.1
+Requires:	libassuan >= 1:2.0.0
 Requires:	libgpg-error >= 1.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,7 +41,7 @@ klientów przy użyciu SSL w Mozilli.
 
 %build
 %{__libtoolize}
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
