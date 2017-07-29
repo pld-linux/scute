@@ -1,24 +1,27 @@
 Summary:	PKCS#11 implementation of GnuPG Agent using the GnuPG Smart Card Daemon
 Summary(pl.UTF-8):	Implementacja PKCS#11 Agenta GnuPG przy użyciu GnuPG Smart Card Daemona
 Name:		scute
-Version:	1.4.0
+Version:	1.5.0
 Release:	1
 License:	GPL v2+
 Group:		Applications
 Source0:	ftp://ftp.gnupg.org/gcrypt/scute/%{name}-%{version}.tar.bz2
-# Source0-md5:	1b280fa34a92708db0bbb371816c88c0
+# Source0-md5:	a3a532d378a425c4719a9f285204ee26
 Patch0:		%{name}-info.patch
 URL:		http://www.gnupg.org/
-BuildRequires:	autoconf >= 2.59
-BuildRequires:	automake >= 1:1.9.3
+BuildRequires:	ImageMagick
+BuildRequires:	autoconf >= 2.61
+BuildRequires:	automake >= 1:1.14
 BuildRequires:	libassuan-devel >= 1:2.0.0
-BuildRequires:	libgpg-error-devel >= 1.4
+BuildRequires:	libgpg-error-devel >= 1.14
 BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	texinfo
+# epstopdf
+BuildRequires:	texlive-pdftex
 Requires(post,postun):	/sbin/ldconfig
 Requires:	gnupg-smime >= 1.9.6
 Requires:	libassuan >= 1:2.0.0
-Requires:	libgpg-error >= 1.4
+Requires:	libgpg-error >= 1.14
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -47,6 +50,7 @@ klientów przy użyciu SSL w Mozilli.
 %{__automake}
 %configure \
 	--with-gpg-agent=/usr/bin/gpg-agent \
+	--with-gpg-connect-agent=/usr/bin/gpg-connect-agent \
 	--with-gpgsm=/usr/bin/gpgsm
 %{__make}
 
@@ -56,7 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/libscute.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/scute.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -72,7 +76,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO doc/website
-%attr(755,root,root) %{_libdir}/libscute.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libscute.so.0
-%attr(755,root,root) %{_libdir}/libscute.so
+%attr(755,root,root) %{_libdir}/scute.so
 %{_infodir}/scute.info*
