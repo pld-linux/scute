@@ -1,27 +1,27 @@
 Summary:	PKCS#11 implementation of GnuPG Agent using the GnuPG Smart Card Daemon
 Summary(pl.UTF-8):	Implementacja PKCS#11 Agenta GnuPG przy użyciu GnuPG Smart Card Daemona
 Name:		scute
-Version:	1.5.0
+Version:	1.6.0
 Release:	1
 License:	GPL v2+
 Group:		Applications
 Source0:	ftp://ftp.gnupg.org/gcrypt/scute/%{name}-%{version}.tar.bz2
-# Source0-md5:	a3a532d378a425c4719a9f285204ee26
+# Source0-md5:	e7142c94c0bbb12fbd9c04b35c09f52f
 Patch0:		%{name}-info.patch
 URL:		http://www.gnupg.org/
 BuildRequires:	ImageMagick
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.14
-BuildRequires:	libassuan-devel >= 1:2.0.0
-BuildRequires:	libgpg-error-devel >= 1.14
+BuildRequires:	libassuan-devel >= 1:2.5.0
+BuildRequires:	libgpg-error-devel >= 1.24
 BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	texinfo
 # epstopdf
 BuildRequires:	texlive-pdftex
 Requires(post,postun):	/sbin/ldconfig
 Requires:	gnupg-smime >= 1.9.6
-Requires:	libassuan >= 1:2.0.0
-Requires:	libgpg-error >= 1.14
+Requires:	libassuan >= 1:2.5.0
+Requires:	libgpg-error >= 1.24
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
